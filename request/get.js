@@ -21,7 +21,7 @@ export const get = (url, params = {}, customHeader = {}) => {
 			icon: 'none'
 		});
 		navigateTo({
-			url: '/pages/login/login'
+			url: '/pages/login'
 		});
 		return Promise.reject('Missing token');
 	}

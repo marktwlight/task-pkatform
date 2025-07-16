@@ -20,7 +20,7 @@ export const postWithToken = (url, data = {}, customHeader = {}) => {
       title: '请先登录',
       icon: 'none'
     });
-    uni.navigateTo({ url: '/pages/login/login' });
+    uni.navigateTo({ url: '/pages/login' });
     return Promise.reject('Missing token');
   }
 

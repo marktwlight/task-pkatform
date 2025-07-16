@@ -5,12 +5,16 @@ import {
 	ref
 } from 'vue';
 
-export const useUserStore = defineStore('user', {
+export const useUserStore = defineStore('user', ()=>{
 	// 其他配置...
-	state: () => ({
+	const userInfo = ref({
 		id: null,
 		name: '游客',
 		avatar: 'https://via.placeholder.com/150',
-		isLoggedIn: false
-	}),
+		email: ''
+	});
+	
+	return {
+		userInfo
+	}
 })

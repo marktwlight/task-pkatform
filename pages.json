@@ -1,7 +1,7 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
@@ -21,37 +21,45 @@
 			}
 		},
 		{
-			"path" : "pages/detail/detail",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "",
 				"navigationStyle": "custom"
 			}
 		},
 		{
-			"path" : "pages/line/line",
-			"style" : 
-			{
-				"navigationBarTitleText" : ""
+			"path": "pages/line/line",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "pages/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		}, {
+			"path": "pages/register",
+			"style": {
+				"navigationBarTitleText": "注册"
 			}
 		}
 	],
 	"easycom": {
-			"autoscan": true,
-			// 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
-			"custom": {
-				"^u--(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
-				"^up-(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
-		    "^u-([^-].*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue"
-			}
-		},
+		"autoscan": true,
+		// 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
+		"custom": {
+			"^u--(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^up-(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^u-([^-].*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue"
+		}
+	},
 	"tabBar": {
 		"color": "#7A7E83",
 		"selectedColor": "#2867CE",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{
-				"pagePath": "pages/index/index",
+				"pagePath": "pages/index",
 				"iconPath": "static/tabbar/ly-home01.png",
 				"selectedIconPath": "static/tabbar/ly-home.png",
 				"text": "首页"

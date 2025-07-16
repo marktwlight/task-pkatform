@@ -1,5 +1,6 @@
 <template>
 	<view class="content">
+		<view>{{ t('welcome') }}</view>
 		<up-search placeholder="搜索经典" bg-color="#e3e3e3" v-model="keyword"></up-search>
 		<up-swiper v-if="bannerList.length" :list="bannerList" keyName="image" showTitle radius="8" :autoplay="true" height="160"></up-swiper>
 		<up-notice-bar text="项目数据仅为示例,非真实数据"></up-notice-bar>
@@ -58,7 +59,9 @@
 </template>
 
 <script setup>
-	import { getBanner, getHomeList } from '../../api/api.js'
+	import { useUserStore } from '@/store/modules/user.js'
+	import { useI18n } from 'vue-i18n'
+	import { getBanner, getHomeList } from '@/api/api.js'
 	import { onLoad, onReachBottom, onPageScroll } from '@dcloudio/uni-app'
 	import {
 		ref,
@@ -72,7 +75,9 @@
 	const flowList = ref([])
 	// 滚动是否显示
 	const showTopBtn = ref(0)
-	
+	const userStore = useUserStore();
+	const {t} = useI18n()
+	console.log('userStore',userStore.userInfo.name);
 	onLoad(() => {
 		getBanner().then(res => {
 			console.log(res, 'res')
